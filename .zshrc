@@ -8,8 +8,6 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-export GOPATH=$HOME/go
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -104,8 +102,10 @@ then
   PS1='$ '
 fi
 
+# nvm
 source /usr/share/nvm/init-nvm.sh
 
+# gcloud
 export CLOUDSDK_PYTHON=python2
 
 # The next line enables shell command completion for gcloud.
@@ -113,9 +113,14 @@ if [ -f /home/pang/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/pang/google-cloud-sdk/completion.zsh.inc'
 fi
 
+# RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # android
 export ANDROID_HOME=${HOME}/Android/Sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+# Go
+export GOPATH=$HOME/go
+export PATH=${PATH}:${GOPATH//://bin:}/bin
